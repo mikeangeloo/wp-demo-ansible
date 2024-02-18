@@ -1,0 +1,13 @@
+---
+# tasks file for ansibleunir.nginx
+
+# nginx
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Start nginx
+  service: name=nginx state=started
+
+- name: Create nginx config
+  template: src=default dest=/etc/nginx/sites-available/default
+  notify: restart nginx

@@ -1,0 +1,5 @@
+---
+# handlers file for ansibleunir.nginx
+
+- name: restart nginx
+  service: name=nginx state=restarted

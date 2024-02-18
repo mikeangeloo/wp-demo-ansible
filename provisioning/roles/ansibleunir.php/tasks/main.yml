@@ -1,0 +1,18 @@
+---
+# tasks file for ansibleunir.php
+
+- name: Install PHP
+  apt:
+    state: present
+    update_cache: yes
+    name:
+      - php
+      - php-fpm
+      - php-mysql
+      - php-xml
+
+- name: "Remove apache2"
+  apt:
+    state: absent
+    name:
+      - apache2

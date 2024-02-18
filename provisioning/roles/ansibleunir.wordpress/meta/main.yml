@@ -1,0 +1,5 @@
+dependencies:
+  - role: ansibleunir.common
+  - role: ansibleunir.php
+  - role: ansibleunir.mysql
+  - role: ansibleunir.nginx
