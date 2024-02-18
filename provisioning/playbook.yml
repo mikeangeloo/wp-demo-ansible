@@ -7,4 +7,10 @@
   # - ansibleunir.nginx
   # - ansibleunir.mysql
   - ansibleunir.wordpress
-  - ansibleunir.hola_unir
+  #- ansibleunir.hola_unir
+  vars:
+    nombre_bd: mywordpressdb
+    usuario_bd: mywordpressusr
+    password_bd: Aproba2to2
+    dominio_wp: book2.example.com
+  

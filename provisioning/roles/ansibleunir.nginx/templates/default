@@ -1,8 +1,8 @@
 server {
   listen 80;
-  root /var/www/book.example.com;
+  root /var/www/{{dominio_wp}};
   index index.php index.html index.htm index.nginx-debian.html;
-  server_name book.example.com;
+  server_name {{dominio_wp}};
 
   location / {
     try_files $uri $uri/ =404;

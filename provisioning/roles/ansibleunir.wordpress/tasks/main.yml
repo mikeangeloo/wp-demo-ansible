@@ -8,16 +8,16 @@
   unarchive: src=/tmp/wordpress.zip dest=/tmp copy=no creates=/tmp/wordpress/wp-settings.php
 
 - name: Create project folder
-  file: dest=/var/www/book.example.com state=directory
+  file: dest=/var/www/{{dominio_wp}} state=directory
 
 - name: Copy WordPress files
-  command: cp -r /tmp/wordpress/. /var/www/book.example.com/
+  command: cp -r /tmp/wordpress/. /var/www/{{dominio_wp}}/
 
 - name: Create WordPress MySQL database
-  mysql_db: name=wordpress state=present
+  mysql_db: name={{nombre_bd}} state=present
 
 - name: Create WordPress MySQL user
-  mysql_user: name=wordpress host=localhost password=bananas priv=wordpress.*:ALL
+  mysql_user: name={{usuario_bd}} host=localhost password={{password_bd}} priv={{nombre_bd}}.*:ALL
 
 - name: Create wp-config
-  template: src=wp-config.php dest=/var/www/book.example.com/wp-config.php
+  template: src=wp-config.php dest=/var/www/{{dominio_wp}}/wp-config.php
